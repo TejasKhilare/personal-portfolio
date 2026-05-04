@@ -21,40 +21,43 @@ const PROJECTS = [
     highlights: [
       { tag: "Custom TCP Protocol", desc: "O(1) GET/SET with TTL semantics" },
       { tag: "Consistent Hashing", desc: "Horizontal sharding via virtual nodes" },
-      { tag: "LRU Eviction", desc: "40% memory utilization improvement" },
+      { tag: "LRU Eviction", desc: "Efficient memory management under load" },
       { tag: "AOF Persistence", desc: "Crash recovery via Append-Only File" },
     ],
     bullets: [
-      "Architected distributed datastore supporting TTL semantics, LRU eviction, and O(1) ops.",
-      "Non-blocking I/O for concurrent requests simulating cache-aside patterns.",
-      "High-availability via AOF persistence for full crash recovery.",
+      "Built distributed datastore supporting O(1) GET/SET with TTL and LRU eviction.",
+      "Implemented consistent hashing with virtual nodes for horizontal scaling.",
+      "Designed AOF persistence for durability and crash recovery.",
     ],
+    github: "https://github.com/TejasKhilare/Redis-like-DataStorage",
   },
   {
-    badge: "AI / VECTOR SEARCH",
+    badge: "AI / RAG SYSTEM",
     badgeColor: C.ind,
     icon: "◈",
-    title: "Hybrid Document Search Engine",
-    subtitle: "AI-Powered Retrieval System",
+    title: "Document Search Engine",
+    subtitle: "RAG-Based Semantic Retrieval System",
     tech: [
       "FastAPI",
       "React",
+      "Qdrant",
+      "PostgreSQL",
       "Gemini Embeddings",
-      "OCR",
-      "pdfPlumber",
-      "TF-IDF",
+      "Docker",
+      "AWS",
     ],
     highlights: [
-      { tag: "Gemini Embeddings", desc: "Semantic vector search via Google AI" },
-      { tag: "TF-IDF + Vector", desc: "35% relevance boost over keyword-only" },
-      { tag: "OCR Pipeline", desc: "99.9% searchability for PDFs & images" },
-      { tag: "Cosine Similarity", desc: "Real-time bounding-box highlight UI" },
+      { tag: "RAG Pipeline", desc: "Semantic retrieval + LLM answer generation" },
+      { tag: "Vector Search", desc: "3072-dim embeddings stored in Qdrant" },
+      { tag: "Dockerized", desc: "Consistent dev & production environments" },
+      { tag: "CI/CD", desc: "GitHub Actions automated pipeline" },
     ],
     bullets: [
-      "Hybrid retrieval: TF-IDF positional indexing + Gemini semantic embeddings.",
-      "Automated pipeline using PyTesseract & pdfPlumber for unstructured documents.",
-      "FastAPI backend + React frontend with real-time match visualization.",
+      "Architected full RAG pipeline integrating retrieval with LLM responses.",
+      "Built OCR + pdfPlumber ingestion pipeline for unstructured documents.",
+      "Deployed system on AWS EC2 with S3 storage and RDS metadata.",
     ],
+    github: "https://github.com/TejasKhilare/Search_Engine",
   },
 ];
 
@@ -138,7 +141,7 @@ function ProjectCard({ project, delay }) {
           ))}
         </div>
 
-        {/* Highlights Grid */}
+        {/* Highlights */}
         <div className="highlight-grid">
           {project.highlights.map((h) => (
             <div
@@ -166,7 +169,6 @@ function ProjectCard({ project, delay }) {
                 style={{
                   color: "#64748b",
                   fontSize: "0.71rem",
-                  lineHeight: 1.4,
                 }}
               >
                 {h.desc}
@@ -175,7 +177,7 @@ function ProjectCard({ project, delay }) {
           ))}
         </div>
 
-        {/* Bullet Points */}
+        {/* Bullets */}
         <ul style={{ listStyle: "none", padding: 0, marginTop: "1rem" }}>
           {project.bullets.map((bullet, index) => (
             <li
@@ -183,33 +185,39 @@ function ProjectCard({ project, delay }) {
               style={{
                 display: "flex",
                 gap: "8px",
-                alignItems: "flex-start",
                 marginBottom: "0.4rem",
               }}
             >
-              <span
-                style={{
-                  color: project.badgeColor,
-                  flexShrink: 0,
-                  fontSize: "0.8rem",
-                  marginTop: "3px",
-                }}
-              >
-                →
-              </span>
-
-              <span
-                style={{
-                  color: "#94a3b8",
-                  fontSize: "0.82rem",
-                  lineHeight: 1.55,
-                }}
-              >
+              <span style={{ color: project.badgeColor }}>→</span>
+              <span style={{ color: "#94a3b8", fontSize: "0.82rem" }}>
                 {bullet}
               </span>
             </li>
           ))}
         </ul>
+
+        {/* 🔴 GITHUB BUTTON (THIS WAS MISSING) */}
+        <div style={{ marginTop: "1.2rem" }}>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              padding: "8px 14px",
+              background: project.badgeColor,
+              color: "#020617",
+              borderRadius: "6px",
+              textDecoration: "none",
+              fontFamily: "'JetBrains Mono',monospace",
+              fontSize: "0.75rem",
+              fontWeight: 700,
+              transition: "all 0.2s",
+            }}
+          >
+            View Code →
+          </a>
+        </div>
       </Card>
     </Reveal>
   );

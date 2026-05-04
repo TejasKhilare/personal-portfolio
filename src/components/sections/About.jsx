@@ -4,11 +4,11 @@ import SectionHeader from "../ui/SectionHeader";
 import { C, rgb } from "../../constants/colors";
 
 const HOBBIES = [
-  { icon: "⛰️", label: "Trekking", sub: "Western Ghats · Resilience" },
-  { icon: "🏊", label: "Swimming", sub: "Discipline · Endurance" },
-  { icon: "🎵", label: "Singing", sub: "Creativity · Harmony" },
+  { icon: "⛰️", label: "Trekking", sub: "Discipline · Resilience" },
+  { icon: "🏊", label: "Swimming", sub: "Endurance · Focus" },
+  { icon: "🎵", label: "Singing", sub: "Creativity · Balance" },
   { icon: "📖", label: "Reading", sub: "Continuous Learning" },
-  { icon: "⚡", label: "LeetCode", sub: "DSA · Problem Solving" },
+  { icon: "⚡", label: "DSA Practice", sub: "Problem Solving" },
 ];
 
 export default function About() {
@@ -23,13 +23,13 @@ export default function About() {
         <Reveal>
           <SectionHeader
             label="About Me"
-            title="Beyond the Code"
-            sub="The engineer behind the systems"
+            title="Engineering Mindset"
+            sub="Focused on building scalable systems and real-world solutions"
           />
         </Reveal>
 
         <div className="about-grid">
-          {/* About Text */}
+          {/* LEFT: ABOUT TEXT */}
           <Reveal delay={0.1}>
             <Card accent={C.em} extra={{ height: "100%" }}>
               <p
@@ -40,61 +40,64 @@ export default function About() {
                   marginBottom: "1rem",
                 }}
               >
-                // Born: November 15, 2003
+                // B.Tech CSE · 2022–2026 · Pune, India
               </p>
 
               <p
                 style={{
                   color: "#94a3b8",
-                  lineHeight: 1.85,
+                  lineHeight: 1.8,
                   fontSize: "0.88rem",
                   marginBottom: "1rem",
                 }}
               >
-                I am a software engineer born with a curiosity for how complex
-                systems work under the hood. Currently pursuing my B.Tech in
-                Computer Science, I specialize in{" "}
+                I am a backend-focused software engineer specializing in{" "}
                 <span style={{ color: C.em, fontWeight: 600 }}>
-                  high-performance backends
+                  distributed systems
                 </span>{" "}
                 and{" "}
-                <span style={{ color: C.em, fontWeight: 600 }}>
-                  distributed architectures
+                <span style={{ color: C.ind, fontWeight: 600 }}>
+                  AI-powered backend applications
                 </span>.
               </p>
 
               <p
                 style={{
                   color: "#94a3b8",
-                  lineHeight: 1.85,
+                  lineHeight: 1.8,
                   fontSize: "0.88rem",
                   marginBottom: "1rem",
                 }}
               >
-                My journey spans low-level networking and{" "}
-                <span style={{ color: C.ind, fontWeight: 600 }}>AI</span> —
-                from Redis-inspired datastores with custom TCP protocols to
-                hybrid search engines using Gemini embeddings.
+                I have built systems ranging from a{" "}
+                <span style={{ color: C.em, fontWeight: 600 }}>
+                  Redis-inspired in-memory datastore
+                </span>{" "}
+                with custom TCP protocols to a{" "}
+                <span style={{ color: C.ind, fontWeight: 600 }}>
+                  RAG-based document search engine
+                </span>{" "}
+                using vector databases and LLMs.
               </p>
 
               <p
                 style={{
                   color: "#94a3b8",
-                  lineHeight: 1.85,
+                  lineHeight: 1.8,
                   fontSize: "0.88rem",
                 }}
               >
-                I believe the discipline of trekking and the rhythm of singing
-                translate directly into my engineering:{" "}
-                <em style={{ color: "#f1f5f9" }}>
-                  persistence, harmony in design, and a constant drive to reach
-                  the next summit.
-                </em>
+                My focus is on designing{" "}
+                <span style={{ color: "#f1f5f9", fontWeight: 600 }}>
+                  scalable, low-latency systems
+                </span>{" "}
+                and understanding how systems work at a deeper level rather than
+                relying only on high-level abstractions.
               </p>
             </Card>
           </Reveal>
 
-          {/* Hobbies */}
+          {/* RIGHT: HOBBIES */}
           <Reveal delay={0.18}>
             <Card accent={C.ind} extra={{ height: "100%" }}>
               <p
@@ -105,7 +108,7 @@ export default function About() {
                   marginBottom: "1.2rem",
                 }}
               >
-                Interests & Hobbies
+                Interests & Activities
               </p>
 
               <div
@@ -126,12 +129,11 @@ export default function About() {
                       background: "rgba(15,23,42,0.5)",
                       border: "1px solid rgba(71,85,105,0.24)",
                       borderRadius: "10px",
-                      cursor: "default",
-                      transition: "border-color 0.2s, transform 0.2s",
+                      transition: "all 0.2s",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = `rgba(${rgb(
-                        C.em
+                        C.ind
                       )},0.45)`;
                       e.currentTarget.style.transform = "translateX(4px)";
                     }}

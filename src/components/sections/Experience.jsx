@@ -13,10 +13,11 @@ const EXP = [
     color: C.em,
     tags: ["FastAPI", "OCR", "JWT Auth", "REST API", "Agile"],
     points: [
-      "Engineered an automated document validator for government income certificates using OCR and pattern matching — achieving 95%+ verification accuracy.",
-      "Developed secure REST APIs with FastAPI + JWT Authentication for sensitive client data.",
-      "Collaborated in Agile environment to modularize backend services, improving scalability.",
-    ],
+  "Built OCR-based document validation system achieving 95%+ accuracy for income certificates.",
+  "Developed secure REST APIs using FastAPI with JWT-based authentication.",
+  "Containerized backend services using Docker to ensure consistent deployment.",
+  "Implemented CI/CD pipelines using GitHub Actions for automated build and deployment.",
+],
   },
   {
     role: "Web Developer Intern",
@@ -26,7 +27,7 @@ const EXP = [
     color: C.ind,
     tags: ["Django Channels", "WebSockets", "React", "Real-time"],
     points: [
-      "Built a real-time chat application using Django Channels and WebSockets, reducing message latency significantly.",
+      "Built a real-time chat application using WebSockets, reducing message latency significantly.",
       "Designed responsive React UI components with synchronized real-time state across multiple clients.",
     ],
   },

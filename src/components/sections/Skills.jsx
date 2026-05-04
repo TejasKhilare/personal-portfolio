@@ -9,47 +9,65 @@ const SKILLS = [
     title: "Languages",
     icon: "⟨/⟩",
     color: C.em,
-    items: ["Python", "JavaScript", "Core Java", "SQL"],
+    items: ["Core Java", "Python", "JavaScript", "SQL"],
   },
   {
-    title: "Frameworks & Libraries",
+    title: "Frameworks & Backend",
     icon: "◈",
     color: C.ind,
     items: [
-      "React JS",
       "FastAPI",
-      "Django",
       "Flask",
-      "NumPy",
-      "Pandas",
-      "PyTesseract",
-      "pdfPlumber",
+      "React JS",
+      "REST APIs",
+      "JWT Authentication",
     ],
   },
   {
-    title: "Protocols & Web Tech",
-    icon: "⟁",
-    color: C.amb,
-    items: ["WebSockets", "REST APIs", "HTTP/S", "TCP/IP", "JSON-RPC"],
-  },
-  {
-    title: "Databases & Systems",
+    title: "Databases & Storage",
     icon: "⬡",
     color: C.pnk,
     items: [
       "PostgreSQL",
       "MySQL",
       "Redis",
-      "Distributed Systems",
-      "Consistent Hashing",
-      "LRU Cache",
+      "Qdrant (Vector DB)",
     ],
   },
   {
-    title: "Tools & Version Control",
-    icon: "⚙",
+    title: "Distributed Systems & Concepts",
+    icon: "⟁",
+    color: C.amb,
+    items: [
+      "Consistent Hashing",
+      "LRU Cache",
+      "TCP/IP",
+      "WebSockets",
+      "System Design Basics",
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    icon: "☁",
     color: C.tel,
-    items: ["Git", "GitHub", "VS Code", "Google Colab"],
+    items: [
+      "AWS (EC2, S3, RDS)",
+      "Docker",
+      "CI/CD (GitHub Actions)",
+    ],
+  },
+  {
+    title: "Data Processing & Tools",
+    icon: "⚙",
+    color: "#22c55e",
+    items: [
+      "PyTesseract (OCR)",
+      "pdfPlumber",
+      "Git",
+      "GitHub",
+      "Postman",
+      "VS Code",
+    ],
   },
 ];
 
@@ -67,7 +85,7 @@ export default function Skills() {
           <SectionHeader
             label="Technical Skills"
             title="The Stack"
-            sub="Languages, frameworks, and systems I work with"
+            sub="Technologies I use to build scalable systems"
           />
         </Reveal>
 
@@ -112,11 +130,7 @@ export default function Skills() {
                   }}
                 >
                   {cat.items.map((skill) => (
-                    <Chip
-                      key={skill}
-                      text={skill}
-                      color={cat.color}
-                    />
+                    <Chip key={skill} text={skill} color={cat.color} />
                   ))}
                 </div>
               </Card>

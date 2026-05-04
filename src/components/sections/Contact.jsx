@@ -9,7 +9,7 @@ const SOCIALS = [
     color: "#0077b5",
   },
   {
-    label: "GitHub",
+    label: "GitHub (Projects Code)",
     href: "https://github.com/tejaskhilare",
     icon: "</>",
     color: "#f1f5f9",
@@ -19,12 +19,6 @@ const SOCIALS = [
     href: "https://leetcode.com/tejaskhilare",
     icon: "LC",
     color: "#ffa116",
-  },
-  {
-    label: "Email",
-    href: "mailto:tejaskhilare35@gmail.com",
-    icon: "@",
-    color: C.em,
   },
 ];
 
@@ -39,133 +33,62 @@ export default function Contact() {
     >
       <div
         className="sw"
-        style={{
-          maxWidth: "640px",
-          textAlign: "center",
-        }}
+        style={{ maxWidth: "640px", textAlign: "center" }}
       >
         <Reveal>
-          <p
-            style={{
-              color: C.em,
-              fontFamily: "'JetBrains Mono',monospace",
-              fontSize: "0.7rem",
-              letterSpacing: "0.2em",
-              marginBottom: "1rem",
-            }}
-          >
-            ── CONTACT ──
-          </p>
-
           <h2
             style={{
-              fontFamily: "'Syne',sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2rem,5vw,3rem)",
+              fontSize: "2.5rem",
               color: "#f1f5f9",
-              letterSpacing: "-0.02em",
               marginBottom: "1rem",
             }}
           >
-            Let's Build Something
+            Let’s Work Together
           </h2>
 
-          <p
-            style={{
-              color: "#64748b",
-              lineHeight: 1.75,
-              marginBottom: "2rem",
-              fontSize: "0.93rem",
-            }}
-          >
-            Open to internships, collaborations, and conversations about
-            distributed systems and AI.
+          <p style={{ color: "#64748b", marginBottom: "2rem" }}>
+            Open to internships, backend roles, and collaborations in
+            distributed systems or AI.
           </p>
 
-          {/* Email Button */}
+          {/* Email CTA */}
           <a
             href="mailto:tejaskhilare35@gmail.com"
             style={{
               display: "inline-block",
               background: C.em,
               color: "#020617",
-              padding: "0.85rem 2.2rem",
-              borderRadius: "10px",
-              textDecoration: "none",
-              fontFamily: "'JetBrains Mono',monospace",
+              padding: "0.8rem 2rem",
+              borderRadius: "8px",
               fontWeight: 700,
-              fontSize: "0.86rem",
-              boxShadow: `0 0 28px rgba(${rgb(C.em)},0.38)`,
-              transition: "all 0.2s",
-              marginBottom: "2.2rem",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-3px)";
-              e.currentTarget.style.boxShadow = `0 0 44px rgba(${rgb(
-                C.em
-              )},0.5)`;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = `0 0 28px rgba(${rgb(
-                C.em
-              )},0.38)`;
+              marginBottom: "2rem",
             }}
           >
-            tejaskhilare35@gmail.com →
+            Email Me →
           </a>
 
-          {/* Social Links */}
-          <div className="contact-links">
-            {SOCIALS.map((social) => (
+          {/* Socials */}
+          <div style={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap" }}>
+            {SOCIALS.map((s) => (
               <a
-                key={social.label}
-                href={social.href}
+                key={s.label}
+                href={s.href}
                 target="_blank"
-                rel="noopener noreferrer"
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "7px",
-                  background: "rgba(15,23,42,0.8)",
-                  border: "1px solid rgba(71,85,105,0.32)",
-                  borderRadius: "8px",
-                  padding: "0.55rem 1.1rem",
-                  textDecoration: "none",
+                  border: "1px solid rgba(71,85,105,0.3)",
+                  padding: "6px 14px",
+                  borderRadius: "6px",
                   color: "#94a3b8",
-                  fontFamily: "'JetBrains Mono',monospace",
-                  fontSize: "0.78rem",
-                  transition: "all 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = social.color;
-                  e.currentTarget.style.color = social.color;
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "rgba(71,85,105,0.32)";
-                  e.currentTarget.style.color = "#94a3b8";
-                  e.currentTarget.style.transform = "translateY(0)";
+                  textDecoration: "none",
                 }}
               >
-                <span style={{ fontWeight: 700 }}>
-                  {social.icon}
-                </span>
-                {social.label}
+                {s.label}
               </a>
             ))}
           </div>
 
-          <p
-            style={{
-              color: "#1e293b",
-              fontFamily: "'JetBrains Mono',monospace",
-              fontSize: "0.7rem",
-              marginTop: "3rem",
-            }}
-          >
-            © 2025 Tejas Khilare · +91 7841980410
+          <p style={{ marginTop: "2rem", color: "#1e293b", fontSize: "0.7rem" }}>
+            © 2026 Tejas Khilare
           </p>
         </Reveal>
       </div>
